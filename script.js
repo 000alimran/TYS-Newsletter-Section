@@ -62,3 +62,26 @@ addTestimonialButton.addEventListener('click', () => {
 });
 
 renderTestimonials();
+document.getElementById('toggle-dark-mode').addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+  });
+  
+  // Form submission functionality
+  document.getElementById('newsletter-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    if (email) {
+      document.getElementById('success-message').classList.remove('hidden');
+      document.getElementById('newsletter-form').reset();
+    }
+  });
+  
+  // Add a testimonial
+  document.getElementById('add-testimonial').addEventListener('click', () => {
+    const container = document.getElementById('testimonial-container');
+    const testimonial = document.createElement('div');
+    testimonial.className = 'p-4 bg-white dark:bg-gray-800 shadow rounded-lg';
+    testimonial.innerText = 'This is a testimonial. YOLO!';
+    container.appendChild(testimonial);
+  });
+  

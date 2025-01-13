@@ -4,38 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The YOLO Newsletter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <img src="TYS_logo_bkash_logo.png" alt="The YOLO Studio Logo">
-    <h1>The YOLO Newsletter</h1>
-    <p>Stay inspired with curated content from The YOLO Studio!</p>
-    <button id="toggle-dark-mode">
-      <span class="material-icons">dark_mode</span> Toggle Dark Mode
-    </button>
+<body class="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+  <header class="p-6 bg-white dark:bg-gray-800 shadow-lg">
+    <div class="container mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <img src="TYS_logo_bkash_logo.png" alt="The YOLO Studio Logo" class="h-12 w-12">
+        <h1 class="text-2xl font-bold">The YOLO Newsletter</h1>
+      </div>
+      <button id="toggle-dark-mode" class="flex items-center gap-2 bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600">
+        <span class="material-icons">dark_mode</span>
+        Toggle Dark Mode
+      </button>
+    </div>
   </header>
 
-  <section class="newsletter-container">
-    <h2>Subscribe Now</h2>
-    <form id="newsletter-form">
-      <input id="email" type="email" placeholder="Enter your email">
-      <button type="submit">
-        <span class="material-icons">send</span> Subscribe
-      </button>
-      <p id="success-message" class="hidden">Thanks for subscribing!</p>
-    </form>
-  </section>
+  <main class="container mx-auto py-8">
+    <!-- Subscription Section -->
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold text-center mb-6">Subscribe Now</h2>
+      <form id="newsletter-form" class="max-w-lg mx-auto p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium">Email Address</label>
+          <input id="email" type="email" placeholder="Enter your email" class="mt-2 w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring focus:ring-blue-300 dark:focus:ring-blue-600" required>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+          <span class="material-icons">send</span> Subscribe
+        </button>
+        <p id="success-message" class="mt-4 hidden text-green-500">Thanks for subscribing!</p>
+      </form>
+    </section>
 
-  <section class="testimonial-section">
-    <h2>What Our Readers Say</h2>
-    <div id="testimonial-container"></div>
-    <button id="add-testimonial">
-      <span class="material-icons">add</span> Add Testimonial
-    </button>
-  </section>
-
+    <!-- Testimonials Section -->
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold text-center mb-6">What Our Readers Say</h2>
+      <div id="testimonial-container" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      <div class="text-center mt-6">
+        <button id="add-testimonial" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">
+          <span class="material-icons">add</span> Add Testimonial
+        </button>
+      </div>
+    </section>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
