@@ -1,3 +1,9 @@
+// Dark Mode Toggle
+const toggleDarkMode = document.getElementById('toggle-dark-mode');
+toggleDarkMode.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
+
 // Email Validation
 const form = document.getElementById('newsletter-form');
 const emailInput = document.getElementById('email');

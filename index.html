@@ -3,37 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The YOLO Letter</title>
-  <link rel="stylesheet" href="style.css">
+  <title>The YOLO Newsletter</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <header class="newsletter-header">
-    <img src="TYS logo bkash logo.png" alt="The YOLO Studio Logo">
-    <h1>The YOLO Letter</h1>
-    <p>Your dose of daily inspiration!</p>
+  <header>
+    <img src="TYS_logo_bkash_logo.png" alt="The YOLO Studio Logo">
+    <h1>The YOLO Newsletter</h1>
+    <p>Stay inspired with curated content from The YOLO Studio!</p>
+    <button id="toggle-dark-mode">
+      <span class="material-icons">dark_mode</span> Toggle Dark Mode
+    </button>
   </header>
 
-  <main>
-    <section class="newsletter-container">
-      <h2>Subscribe Now</h2>
-      <p>Stay updated with the latest news and inspiration.</p>
-      <form id="newsletter-form">
-        <input type="email" id="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-      <p id="success-message" class="hidden">Thank you for subscribing!</p>
-    </section>
+  <section class="newsletter-container">
+    <h2>Subscribe Now</h2>
+    <form id="newsletter-form">
+      <input id="email" type="email" placeholder="Enter your email">
+      <button type="submit">
+        <span class="material-icons">send</span> Subscribe
+      </button>
+      <p id="success-message" class="hidden">Thanks for subscribing!</p>
+    </form>
+  </section>
 
-    <section class="testimonial-section">
-      <h2>What Our Readers Say</h2>
-      <div id="testimonial-container"></div>
-      <button id="add-testimonial">Add Your Testimonial</button>
-    </section>
-  </main>
-  
-  <footer>
-    <p>&copy; 2025 The YOLO Studio. All rights reserved.</p>
-  </footer>
+  <section class="testimonial-section">
+    <h2>What Our Readers Say</h2>
+    <div id="testimonial-container"></div>
+    <button id="add-testimonial">
+      <span class="material-icons">add</span> Add Testimonial
+    </button>
+  </section>
 
   <script src="script.js"></script>
 </body>
