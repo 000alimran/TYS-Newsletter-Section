@@ -47,3 +47,38 @@ form.addEventListener('submit', (event) => {
     alert('Please enter a valid email address.');
   }
 });
+const testimonialContainer = document.getElementById('testimonial-container');
+const addTestimonialButton = document.getElementById('add-testimonial');
+
+// Array to store testimonials
+const testimonials = [
+  { name: 'John Doe', feedback: 'The YOLO Letter is amazing! It keeps me inspired every day.' },
+  { name: 'Jane Smith', feedback: 'I absolutely love the content. It’s fresh and relevant!' },
+];
+
+// Render testimonials
+function renderTestimonials() {
+  testimonialContainer.innerHTML = '';
+  testimonials.forEach((testimonial) => {
+    const div = document.createElement('div');
+    div.className = 'testimonial';
+    div.innerHTML = `
+      <h3>${testimonial.name}</h3>
+      <p>"${testimonial.feedback}"</p>
+    `;
+    testimonialContainer.appendChild(div);
+  });
+}
+
+// Add new testimonial
+addTestimonialButton.addEventListener('click', () => {
+  const name = prompt('Enter your name:');
+  const feedback = prompt('Enter your feedback:');
+  if (name && feedback) {
+    testimonials.push({ name, feedback });
+    renderTestimonials();
+  }
+});
+
+// Initial render
+renderTestimonials();

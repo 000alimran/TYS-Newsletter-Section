@@ -82,4 +82,23 @@ input.error {
     border-color: green;
     background-color: #e6ffe6;
   }
-      
+/* Testimonial styles */
+.testimonial {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4f46e5;
+  }
+  
+  .testimonial p {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+  }
+        
