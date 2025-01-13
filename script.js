@@ -22,3 +22,28 @@ form.addEventListener('submit', (event) => {
     form.reset();
   }
 });
+const emailInput = document.getElementById('email');
+
+// Email validation on input
+emailInput.addEventListener('input', () => {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email regex pattern
+  if (!emailPattern.test(emailInput.value)) {
+    emailInput.classList.add('error');
+    emailInput.classList.remove('success');
+  } else {
+    emailInput.classList.add('success');
+    emailInput.classList.remove('error');
+  }
+});
+
+// Form submission logic
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (emailInput.classList.contains('success')) {
+    alert('Thank you for subscribing to The YOLO Letter!');
+    form.reset();
+    emailInput.classList.remove('success', 'error');
+  } else {
+    alert('Please enter a valid email address.');
+  }
+});
